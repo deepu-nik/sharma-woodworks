@@ -1,0 +1,28 @@
+{
+  "works": [
+    {
+      "id": "tv-console-01",
+      "title": "Classic Carved Wooden TV Console",
+      "description": "Solid wood with glass panels & rope-edge molding.",
+      "image": "/TvConsole.jpg",
+      "category": "Console",
+      "b2b_highlight": false
+    },
+    {
+      "id": "media-unit-01",
+      "title": "Mid-Century Rattan Media Console",
+      "description": "Natural cane mesh doors with rounded walnut framing.",
+      "image": "/MediaConsole.jpg",
+      "category": "Console",
+      "b2b_highlight": true
+    },
+    {
+      "id": "chest-01",
+      "title": "Carved Wooden Multi-Drawer Chest",
+      "description": "Solid wood 5-row storage chest featuring detailed corner carvings.",
+      "image": "/WoodenChest.jpg",
+      "category": "Storage",
+      "b2b_highlight": true
+    }
+  ]
+}
