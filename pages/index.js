@@ -171,7 +171,7 @@ export default function Home({ works }) {
         <h2>Visit The Workshop</h2>
         <div className="contact-container">
           <div className="map-box">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.0768041413926!2d72.84300637547678!3d19.148115049704177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b710e695b9d3%3A0xe7bca05780c0c2f6!2sBabloo%20Furnitures!5e0!3m2!1sen!2sin!4v1787924182197!5m2!1sen!2sin" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.071322215397!2d72.8378950749687!3d19.148355049697575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b710e695b9d3%3A0xe7bca05780c0c2f6!2sBabloo%20Furnitures!5e0!3m2!1sen!2sin!4v1788681765101!5m2!1sen!2sin" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
             <a href="https://maps.app.goo.gl/YourGoogleMapsLinkHere" className="map-link" target="_blank" rel="noopener noreferrer">Open in Google Maps App 📍</a>
           </div>
           <div className="contact-details">
