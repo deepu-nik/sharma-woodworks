@@ -47,6 +47,9 @@ export default function Layout({ children }) {
             <Link href="/#process" onClick={() => setMenuOpen(false)}>Our Process</Link>
             <Link href="/#faq" onClick={() => setMenuOpen(false)}>FAQ</Link>
             <Link href="/#contact" onClick={() => setMenuOpen(false)}>Contact</Link>
+
+<a href="tel:+919137794182" className="mobile-call-only" onClick={() => setMenuOpen(false)}>📞 Call Now</a>
+
           </div>
 
           <div className="nav-actions">
