@@ -77,96 +77,66 @@ project.**
 
 The project follows a Next.js-based structure:
 
-```text
+```
 sharma-woodworks/
-│
-├── components/       # Reusable UI components
-├── pages/            # Application pages and routes
-├── public/           # Static assets
-├── styles/           # Styling
-│
-├── package.json      # Project dependencies and scripts
-├── next.config.mjs   # Next.js configuration
-├── eslint.config.mjs # ESLint configuration
-├── jsconfig.json     # JavaScript configuration
-└── README.md         # Project documentation
+├── components/
+├── pages/
+├── public/
+├── styles/
+├── package.json
+├── next.config.mjs
+├── eslint.config.mjs
+├── jsconfig.json
+└── README.md
 
-
+```
 ---
 
-🔨 The Workshop Process
+## 🔨 The Workshop Process
 
 The website communicates the workshop's approach to custom furniture manufacturing, from understanding requirements to completing and delivering the finished furniture.
 
 The process involves:
 
-1. Understanding Requirements
+1. **Understanding Requirements**
+   - Discussing the customer's needs
+   - Understanding dimensions, design preferences, and intended use
 
-Discussing the customer's needs
+2. **Material & Design Planning**
+   - Selecting appropriate materials
+   - Planning the construction and finishing requirements
 
-Understanding dimensions, design preferences, and intended use
+3. **Manufacturing**
+   - Cutting and shaping materials
+   - Precision joinery and assembly
+   - Craftsmanship and finishing
 
-
-
-2. Material & Design Planning
-
-Selecting appropriate materials
-
-Planning the construction and finishing requirements
-
-
-
-3. Manufacturing
-
-Cutting and shaping materials
-
-Precision joinery and assembly
-
-Craftsmanship and finishing
-
-
-
-4. Completion & Delivery
-
-Final inspection and finishing
-
-Delivery of the completed furniture
-
-
-
-
+4. **Completion & Delivery**
+   - Final inspection and finishing
+   - Delivery of the completed furniture
 
 ---
 
-💡 What I Learned
+## 💡 What I Learned
 
 This project helped me understand that software development is not only about writing code.
 
 While working on a real business website, I learned about:
 
-Translating real-world requirements into a software project
-
-Designing for actual users
-
-Structuring a business website
-
-Responsive web development
-
-Working with Next.js and React
-
-Organizing project files and components
-
-Presenting real business information clearly
-
-Iterating on a project based on practical requirements
-
+- Translating real-world requirements into a software project
+- Designing for actual users
+- Structuring a business website
+- Responsive web development
+- Working with Next.js and React
+- Organizing project files and components
+- Presenting real business information clearly
+- Iterating on a project based on practical requirements
 
 Most importantly, it gave me experience building something intended to be used by a real business.
 
-
 ---
 
-🤖 Development & AI Assistance
+## 🤖 Development & AI Assistance
 
 The initial version of this project was developed with assistance from AI tools as part of my learning process.
 
@@ -176,84 +146,61 @@ I am progressively reviewing, modifying, debugging, and improving the project as
 
 My goal is not simply to have a working website, but to gradually take full ownership of the implementation and understand how the different parts of the application work.
 
-
 ---
 
-🚀 Future Improvements
+## 🚀 Future Improvements
 
 This project can be expanded from a business website into a more complete digital system for the workshop.
 
 Possible future improvements include:
 
-[ ] Dedicated furniture/project gallery
-
-[ ] Better project categorization
-
-[ ] Customer enquiry management
-
-[ ] WhatsApp enquiry automation
-
-[ ] Admin dashboard
-
-[ ] Content management system
-
-[ ] Customer quotation workflow
-
-[ ] SEO improvements
-
-[ ] Website analytics
-
-[ ] Performance optimization
-
-[ ] Accessibility improvements
-
-[ ] Improved mobile UX
-
-
+- [ ] Dedicated furniture/project gallery
+- [ ] Better project categorization
+- [ ] Customer enquiry management
+- [ ] WhatsApp enquiry automation
+- [ ] Admin dashboard
+- [ ] Content management system
+- [ ] Customer quotation workflow
+- [ ] SEO improvements
+- [ ] Website analytics
+- [ ] Performance optimization
+- [ ] Accessibility improvements
+- [ ] Improved mobile UX
 
 ---
 
-📈 Project Status
+## 📈 Project Status
 
-Status: Live & Actively Improving
+**Status: Live & Actively Improving**
 
 The website is currently being used as the online presence for the family business.
 
 Future improvements will focus on both the technical quality of the application and its usefulness to the actual business.
 
-
 ---
 
-👨‍💻 About the Developer
+## 👨‍💻 About the Developer
 
-Built by Deepu Sharma, a Computer Science Engineering student at DYPIU, Pune.
+Built by **Deepu Sharma**, a Computer Science Engineering student at DYPIU, Pune.
 
 Currently learning:
 
-C++
-
-Data Structures & Algorithms
-
-Python
-
-Artificial Intelligence & Machine Learning
-
-SQL & Databases
-
-Software Development
-
+- C++
+- Data Structures & Algorithms
+- Python
+- Artificial Intelligence & Machine Learning
+- SQL & Databases
+- Software Development
 
 This project is part of my journey of learning by building real-world software.
 
-
 ---
 
-📄 Note
+## 📄 Note
 
 This repository contains code associated with a real-world business.
 
 Please do not reuse the business's branding, images, content, or other proprietary materials without permission.
-
 
 ---
 
