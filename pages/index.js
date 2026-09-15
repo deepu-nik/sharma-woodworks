@@ -172,7 +172,16 @@ export default function Home({ works }) {
         <h2>Visit The Workshop</h2>
         <div className="contact-container">
           <div className="map-box">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7538.142875116066!2d72.84047!3d19.14835!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b710e695b9d3%3A0xe7bca05780c0c2f6!2sSharma%20Woodworks!5e0!3m2!1sen!2sin!4v1789482045533!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>            <a href="https://maps.app.goo.gl/YourGoogleMapsLinkHere" className="map-link" target="_blank" rel="noopener noreferrer">Open in Google Maps App 📍</a>
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7538.142875116066!2d72.84047!3d19.14835!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b710e695b9d3%3A0xe7bca05780c0c2f6!2sSharma%20Woodworks!5e0!3m2!1sen!2sin!4v1789482045533!5m2!1sen!2sin" 
+              width="600" 
+              height="450" 
+              style={{ border: 0 }} 
+              allowFullScreen="" 
+              loading="lazy" 
+              referrerPolicy="strict-origin-when-cross-origin"
+            ></iframe>
+            <a href="https://maps.google.com/?cid=16700088029094036214" className="map-link" target="_blank" rel="noopener noreferrer">Open in Google Maps App 📍</a>
           </div>
           <div className="contact-details">
             <p><strong>Sharma Woodworks</strong>Bohri Compound, Oshiwara Bridge, near Sunni Mastaniya Masjid, Oshiwara, Jogeshwari West, Mumbai, Maharashtra 400102</p>
