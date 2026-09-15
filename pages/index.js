@@ -24,7 +24,7 @@ export default function Home({ works }) {
     "url": "https://sharmawoodworks.com",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Bohri Compound, Bridge, near Sunni Mastaniya Masjid, Oshiwara, Jogeshwari West",
+      "streetAddress": "Bohri Compound, Oshiwara Bridge, near Sunni Mastaniya Masjid, Oshiwara, Jogeshwari West",
       "addressLocality": "Mumbai",
       "addressRegion": "Maharashtra",
       "postalCode": "400102",
@@ -171,11 +171,10 @@ export default function Home({ works }) {
         <h2>Visit The Workshop</h2>
         <div className="contact-container">
           <div className="map-box">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.071322215397!2d72.8378950749687!3d19.148355049697575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b710e695b9d3%3A0xe7bca05780c0c2f6!2sBabloo%20Furnitures!5e0!3m2!1sen!2sin!4v1788681765101!5m2!1sen!2sin" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
-            <a href="https://maps.app.goo.gl/YourGoogleMapsLinkHere" className="map-link" target="_blank" rel="noopener noreferrer">Open in Google Maps App 📍</a>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7538.142875116066!2d72.84047!3d19.14835!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b710e695b9d3%3A0xe7bca05780c0c2f6!2sSharma%20Woodworks!5e0!3m2!1sen!2sin!4v1789482045533!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>            <a href="https://maps.app.goo.gl/YourGoogleMapsLinkHere" className="map-link" target="_blank" rel="noopener noreferrer">Open in Google Maps App 📍</a>
           </div>
           <div className="contact-details">
-            <p><strong>Sharma Woodworks</strong>Bohri Compound, Bridge, near Sunni Mastaniya Masjid, Oshiwara, Jogeshwari West, Mumbai, Maharashtra 400102</p>
+            <p><strong>Sharma Woodworks</strong>Bohri Compound, Oshiwara Bridge, near Sunni Mastaniya Masjid, Oshiwara, Jogeshwari West, Mumbai, Maharashtra 400102</p>
             <br />
             <p><strong>Direct Call & Consultation:</strong><br /><a href="tel:+919137794182">+91 91377 94182</a></p>
           </div>
