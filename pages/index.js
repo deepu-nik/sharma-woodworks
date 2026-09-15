@@ -52,6 +52,7 @@ export default function Home({ works }) {
         <title>Sharma Woodworks | Bespoke Furniture Manufacturing in Mumbai</title>
         <meta name="description" content="Sharma Woodworks is a premier bespoke wooden furniture manufacturer based in Oshiwara, Mumbai. We specialize in custom solid wood carpentry, residential interiors, and B2B showroom supply with strict turnaround scheduling." />
         <meta name="keywords" content="furniture manufacturer mumbai, custom carpentry oshiwara, solid wood furniture, bespoke woodwork, sharma woodworks" />
+        <meta name="google-site-verification" content="65ofGt5rsdy5SvufExzCSAZPeAfdJC5O0fIJwItt0jc" />
         
         <link rel="icon" type="image/png" sizes="32x32" href="/logo.png" />
         <link rel="apple-touch-icon" href="/logo.png" />
