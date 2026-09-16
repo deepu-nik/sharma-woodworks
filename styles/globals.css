@@ -59,10 +59,22 @@ nav.scrolled .logo img { height: 48px; }
 .btn-secondary { padding: 15px 36px; background: transparent; color: var(--white); border: 1.5px solid rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 0.9rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; border-radius: 3px; transition: all 0.3s ease; }
 .btn-secondary:hover { border-color: var(--brass-gold); color: var(--brass-gold); background: rgba(255, 255, 255, 0.05); transform: translateY(-2px); }
 
+/* --- NEW: Trust Metrics Bar --- */
+.metrics-bar { background-color: var(--dark-walnut); color: var(--white); padding: 40px 5%; border-top: 2px solid var(--brass-gold); border-bottom: 2px solid var(--brass-gold); }
+.metrics-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-around; flex-wrap: wrap; gap: 30px; text-align: center; }
+.metric-item h3 { font-size: 2.8rem; margin-bottom: 8px; color: var(--brass-gold); font-weight: 700; line-height: 1; }
+.metric-item p { font-size: 1.05rem; text-transform: uppercase; letter-spacing: 1.2px; color: #E6E1DC; }
+
 /* Sections */
 section { padding: 90px 5%; }
 section h2 { text-align: center; font-size: 3.2rem; margin-bottom: 50px; position: relative; }
 section h2::after { content: ''; display: block; width: 50px; height: 2.5px; background: var(--brass-gold); margin: 18px auto 0; }
+
+/* --- NEW: Portfolio Category Filters --- */
+.portfolio-filters { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; margin-bottom: 40px; }
+.filter-btn { background-color: transparent; border: 1.5px solid var(--text-light); color: var(--text-dark); padding: 10px 24px; border-radius: 30px; font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px; }
+.filter-btn:hover { border-color: var(--brass-gold); color: var(--brass-gold); }
+.filter-btn.active { background-color: var(--dark-walnut); color: var(--white); border-color: var(--dark-walnut); }
 
 /* Portfolio Grid */
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 35px; max-width: 1200px; margin: 0 auto; }
@@ -74,6 +86,7 @@ section h2::after { content: ''; display: block; width: 50px; height: 2.5px; bac
 .card-content { padding: 26px; text-align: center; }
 .card h3 { font-size: 1.6rem; margin-bottom: 8px; }
 .card p { color: var(--text-light); font-size: 0.95rem;}
+.no-results { grid-column: 1 / -1; text-align: center; padding: 40px 20px; font-style: italic; color: var(--text-light); font-size: 1.1rem; }
 
 /* Process Steps */
 .process-bg { background-color: var(--white); }
@@ -145,6 +158,13 @@ footer { background-color: var(--dark-walnut); color: var(--white); padding: 60p
   .hero { height: auto; padding: 100px 5% 100px 5%; }
   .hero h1 { font-size: 2.6rem; }
   .hero p { font-size: 1.05rem; }
+  
+  /* Responsive additions for new features */
+  .metric-item h3 { font-size: 2.2rem; }
+  .metric-item p { font-size: 0.9rem; }
+  .portfolio-filters { gap: 10px; }
+  .filter-btn { padding: 8px 18px; font-size: 0.85rem; }
+  
   .contact-container { padding: 25px; }
   .whatsapp-float { bottom: 20px; right: 20px; padding: 12px 18px; font-size: 0.85rem; }
 }
@@ -152,7 +172,7 @@ footer { background-color: var(--dark-walnut); color: var(--white); padding: 60p
 /* Print Styles */
 @media print {
   body { background-color: #fff; color: #000; }
-  nav, .hero, .whatsapp-float, footer, .contact-container iframe { display: none !important; }
+  nav, .hero, .whatsapp-float, footer, .contact-container iframe, .portfolio-filters { display: none !important; }
   section { padding: 20px 0; }
   .card { box-shadow: none; border: 1px solid #ddd; page-break-inside: avoid; }
   .process-bg { background-color: #fff; }

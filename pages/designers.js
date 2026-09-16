@@ -9,7 +9,8 @@ import path from 'path';
 export default function Designers({ works }) {
   const [lightboxImage, setLightboxImage] = useState(null);
 
-  const designerWorks = works.filter((work) => work.b2b_highlight);
+  // Safely fallback to an empty array if works is undefined, then filter
+  const designerWorks = (works || []).filter((work) => work.b2b_highlight);
 
   return (
     <Layout>
@@ -73,6 +74,12 @@ export default function Designers({ works }) {
               </div>
             </div>
           ))}
+
+          {designerWorks.length === 0 && (
+            <p className="no-results" style={{ gridColumn: "1 / -1", textAlign: "center", padding: "2rem", color: "#666" }}>
+              More B2B showcase pieces being photographed. Contact us directly for our extended catalog.
+            </p>
+          )}
         </div>
       </section>
 
@@ -87,13 +94,19 @@ export default function Designers({ works }) {
 }
 
 export async function getStaticProps() {
-  const filePath = path.join(process.cwd(), 'portfolio.json');
-  const jsonData = fs.readFileSync(filePath, 'utf8');
-  const data = JSON.parse(jsonData);
+  let works = [];
+  try {
+    const filePath = path.join(process.cwd(), 'portfolio.json');
+    const jsonData = fs.readFileSync(filePath, 'utf8');
+    const data = JSON.parse(jsonData);
+    works = data.works || [];
+  } catch (error) {
+    console.error("Error reading portfolio.json in designers.js:", error);
+  }
 
   return {
     props: {
-      works: data.works || [],
+      works,
     },
   };
 }

@@ -31,6 +31,13 @@ export default function Layout({ children }) {
           overflow-x: hidden;
           position: relative;
         }
+        
+        /* NEW: Hide mobile menu items on desktop */
+        @media (min-width: 769px) {
+          .mobile-only {
+            display: none !important;
+          }
+        }
       `}</style>
 
       <div className="site-wrapper">
@@ -43,13 +50,16 @@ export default function Layout({ children }) {
           
           <div className={`nav-links ${menuOpen ? 'active' : ''}`} id="navLinks">
             <Link href="/#portfolio" onClick={() => setMenuOpen(false)}>Selected Works</Link>
-            <Link href="/designers" onClick={() => setMenuOpen(false)}>For Designers</Link>
+            
+            {/* Added mobile-only class here */}
+            <Link href="/designers" className="mobile-only" onClick={() => setMenuOpen(false)}>For Designers</Link>
+            
             <Link href="/#process" onClick={() => setMenuOpen(false)}>Our Process</Link>
             <Link href="/#faq" onClick={() => setMenuOpen(false)}>FAQ</Link>
             <Link href="/#contact" onClick={() => setMenuOpen(false)}>Contact</Link>
 
-<a href="tel:+919137794182" className="mobile-call-only" onClick={() => setMenuOpen(false)}>📞 Call Now</a>
-
+            {/* Added mobile-only class here */}
+            <a href="tel:+919137794182" className="mobile-only mobile-call-only" onClick={() => setMenuOpen(false)}>📞 Call Now</a>
           </div>
 
           <div className="nav-actions">
@@ -71,7 +81,7 @@ export default function Layout({ children }) {
           <div className="footer-container">
             <div className="footer-col">
               <h4>Sharma Woodworks</h4>
-              <p>Custom wooden furniture manufacturing and bespoke joinery workshop in Oshiwara, Mumbai. We build custom designs for homeowners, architects, and retail showrooms.</p>
+              <p>Custom wooden furniture manufacturing and bespoke joinery workshop in Jogeshwari West, Mumbai. We build custom designs for homeowners, architects, and retail showrooms.</p>
               <div className="social-links">
                 <a href="https://instagram.com/sharmawoodworks.mumbai?utm_source=website" target="_blank" rel="noopener noreferrer">Instagram</a>
                 <a href="https://facebook.com/sharmawoodworks?utm_source=website" target="_blank" rel="noopener noreferrer">Facebook</a>
@@ -90,11 +100,11 @@ export default function Layout({ children }) {
               <h4>Workshop Hours</h4>
               <p>Monday – Saturday: 9:00 AM – 8:00 PM<br/>Sunday: By Appointment</p>
               <br/>
-              <p>Oshiwara, Mumbai - 400102</p>
+              <p>Jogeshwari West, Mumbai</p>
             </div>
           </div>
           <div className="footer-bottom">
-            <p>&copy; {year} Sharma Woodworks. All rights reserved.</p>
+            <p>&copy; {year} Sharma Woodworks. Est. 2011. All rights reserved.</p>
           </div>
         </footer>
 

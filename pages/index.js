@@ -9,10 +9,24 @@ import path from 'path';
 export default function Home({ works }) {
   const [lightboxImage, setLightboxImage] = useState(null);
   const [faqOpen, setFaqOpen] = useState(null);
+  const [activeFilter, setActiveFilter] = useState('All');
 
   const toggleFaq = (index) => {
     setFaqOpen(faqOpen === index ? null : index);
   };
+
+  // Extract unique categories directly from the JSON safely
+  const dynamicCategories = works ? Array.from(new Set(works.map((work) => work.category))) : [];
+  
+  // Combine 'All', the dynamic categories, and the special B2B filter
+  const categories = ['All', ...dynamicCategories.filter(Boolean), 'B2B Showroom Supply'];
+
+  // Filter logic: handles 'All', the special B2B boolean, or matches the exact category string
+  const filteredWorks = !works ? [] : activeFilter === 'All' 
+    ? works 
+    : activeFilter === 'B2B Showroom Supply'
+      ? works.filter((work) => work.b2b_highlight === true)
+      : works.filter((work) => work.category === activeFilter);
 
   const schemaData = {
     "@context": "https://schema.org",
@@ -79,10 +93,40 @@ export default function Home({ works }) {
         </div>
       </header>
 
+      <section className="metrics-bar">
+        <div className="metrics-container">
+          <div className="metric-item">
+            <h3>Est. 2011</h3>
+            <p>Legacy of Craftsmanship</p>
+          </div>
+          <div className="metric-item">
+            <h3>100%</h3>
+            <p>Off-Site Manufacturing</p>
+          </div>
+          <div className="metric-item">
+            <h3>B2B & B2C</h3>
+            <p>Dedicated Verticals</p>
+          </div>
+        </div>
+      </section>
+
       <section id="portfolio">
         <h2>Selected Works</h2>
+        
+        <div className="portfolio-filters">
+          {categories.map((cat) => (
+            <button 
+              key={cat} 
+              className={`filter-btn ${activeFilter === cat ? 'active' : ''}`}
+              onClick={() => setActiveFilter(cat)}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+
         <div className="grid">
-          {works.map((work) => (
+          {filteredWorks.map((work) => (
             <div className="card" key={work.id} onClick={() => setLightboxImage(work.image)}>
               <div className="card-img-wrapper">
                 <Image 
@@ -99,6 +143,12 @@ export default function Home({ works }) {
               </div>
             </div>
           ))}
+          
+          {filteredWorks.length === 0 && (
+            <p className="no-results" style={{ gridColumn: "1 / -1", textAlign: "center", padding: "2rem", color: "#666" }}>
+              More projects in this category coming soon.
+            </p>
+          )}
         </div>
       </section>
 
@@ -202,13 +252,19 @@ export default function Home({ works }) {
 }
 
 export async function getStaticProps() {
-  const filePath = path.join(process.cwd(), 'portfolio.json');
-  const jsonData = fs.readFileSync(filePath, 'utf8');
-  const data = JSON.parse(jsonData);
+  let works = [];
+  try {
+    const filePath = path.join(process.cwd(), 'portfolio.json');
+    const jsonData = fs.readFileSync(filePath, 'utf8');
+    const data = JSON.parse(jsonData);
+    works = data.works || [];
+  } catch (error) {
+    console.error("Error reading portfolio.json:", error);
+  }
 
   return {
     props: {
-      works: data.works || [],
+      works,
     },
   };
 }
