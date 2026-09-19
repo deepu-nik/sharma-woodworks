@@ -91,7 +91,11 @@ export default function Layout({ children }) {
             <h3>Contact</h3>
             <a href="tel:+919137794182">+91 91377 94182</a>
             <a href="https://wa.me/919137794182" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-            <a href="https://maps.google.com/?cid=16700088029094036214" target="_blank" rel="noopener noreferrer">Get directions ↗</a>
+            <a href="https://www.google.com/maps/dir/?api=1&destination=Sharma%20Woodworks%2C%20Oshiwara%2C%20Mumbai%2C%20Maharashtra%20400102&travelmode=driving" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            >
+              Get directions ↗</a>
             <p>Monday – Saturday<br />9:00 AM – 8:00 PM</p>
           </div>
         </div>
