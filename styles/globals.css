@@ -103,8 +103,7 @@ h3 { font-size: 1.65rem; line-height: 1.1; }
   position: relative;
   isolation: isolate;
 }
-.hero-media { position: absolute; inset: 0; z-index: 0; }
-.hero::before { content: ''; position: absolute; inset: 0; z-index: 1; background: linear-gradient(110deg, rgba(25,15,10,.86), rgba(35,22,16,.58)); }
+.hero::before { content: ''; position: absolute; inset: 0; z-index: 1; background: linear-gradient(110deg, rgba(25,15,10,.94), rgba(35,22,16,.9)); }
 .hero::after {
   content: '';
   position: absolute;
@@ -112,9 +111,9 @@ h3 { font-size: 1.65rem; line-height: 1.1; }
   height: 130px;
   background: linear-gradient(transparent, rgba(35,22,16,.18));
   pointer-events: none;
-  z-index: 1;
+  z-index: 2;
 }
-.hero-inner { position: relative; z-index: 2; max-width: 960px; }
+.hero-inner { position: relative; z-index: 3; max-width: 960px; }
 .hero h1 { color: white; max-width: 850px; margin: 10px auto 26px; }
 .hero-copy { max-width: 700px; margin: 0 auto 34px; color: #eee8e2; font-size: clamp(1rem, 1.8vw, 1.2rem); }
 .eyebrow, .section-eyebrow, .contact-label {
@@ -493,7 +492,6 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--brass-gold); ou
   .btn { font-size: .88rem; min-height: 52px; }
 
   .final-cta h2 { line-height: 1.08; }
-  .hero-media img { object-position: 58% center !important; }
   .hero-actions .btn { width: 100%; }
   .trust-strip { padding: 0 20px; }
   .contact-card { padding: 28px; }
