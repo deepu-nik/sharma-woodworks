@@ -484,16 +484,8 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--brass-gold); ou
   .btn { font-size: .88rem; min-height: 52px; }
 
   .final-cta h2 { line-height: 1.08; }
-}
-  section { padding: 70px 20px; }
-  .hero { padding-left: 20px; padding-right: 20px; }
   .hero-actions .btn { width: 100%; }
   .trust-strip { padding: 0 20px; }
-  .trust-grid strong { font-size: 1.45rem; }
-  .trust-grid span { font-size: .68rem; }
-  .service-card { min-height: 190px; }
-  .service-number { margin-bottom: 35px; }
-  .portfolio-card-content { padding: 20px; }
   .contact-card { padding: 28px; }
   .footer-container { grid-template-columns: 1fr; }
   .footer-brand { grid-column: auto; }
