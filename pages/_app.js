@@ -1,5 +1,1 @@
-import '../styles/globals.css';
-
-export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />;
-}
+import { Cormorant_Garamond, Plus_Jakarta_Sans } from 'next/font/google';\nimport '../styles/globals.css';\n\nconst headingFont = Cormorant_Garamond({\n  subsets: ['latin'],\n  weight: ['500', '600', '700'],\n  variable: '--font-heading',\n  display: 'swap',\n});\n\nconst bodyFont = Plus_Jakarta_Sans({\n  subsets: ['latin'],\n  weight: ['400', '500', '600', '700'],\n  variable: '--font-body',\n  display: 'swap',\n});\n\nexport default function App({ Component, pageProps }) {\n  return (\n    <div className={[headingFont.variable, bodyFont.variable].join(' ')}>\n      <Component {...pageProps} />\n    </div>\n  );\n}\n
