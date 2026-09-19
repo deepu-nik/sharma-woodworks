@@ -4,204 +4,99 @@
 
 🌐 **Live Website:** [sharmawoodworks.com](https://sharmawoodworks.com)
 
-Sharma Woodworks is a family-run custom furniture workshop specializing
-in bespoke wooden furniture and custom manufacturing.
+Sharma Woodworks is a family-run custom furniture workshop in Oshiwara, Mumbai. This repository contains the website I built to give the business a professional online presence, showcase selected work, and make enquiries easier through WhatsApp and direct contact.
 
-This website was built for my family's furniture business to establish
-an online presence, showcase the workshop's work, and make it easier for
-potential customers to discover the business and get in touch.
+## What the website does
 
----
+- Presents the workshop and its custom furniture offering
+- Showcases selected furniture projects
+- Provides a dedicated designer / B2B fabrication page
+- Explains the manufacturing and enquiry process
+- Provides FAQ and workshop information
+- Supports direct call, WhatsApp and directions
+- Uses local-business structured data and a sitemap
+- Is designed to run as a static site without a database or paid backend
 
-## 📌 About the Business
+## Tech Stack
 
-Sharma Woodworks is an offline furniture workshop operated by my family.
-
-The workshop works with a small team of skilled craftsmen and focuses on
-custom-made wooden furniture based on individual customer requirements.
-
-Unlike a conventional furniture store, the workshop primarily works on
-custom requirements where furniture is manufactured according to the
-customer's needs, preferences, dimensions, and design.
-
----
-
-## 🎯 Why I Built This
-
-The business primarily operated offline and did not have a dedicated
-online presence.
-
-I wanted to build a professional website that could:
-
-- Introduce the workshop to potential customers
-- Showcase selected furniture work
-- Explain the workshop and its approach to custom manufacturing
-- Help customers understand the type of work we provide
-- Provide information for homeowners, designers, architects, and
-  businesses
-- Make it easier for potential customers to start an enquiry
-
-This was one of my first projects where I built software for a
-**real-world business rather than only as a practice or tutorial
-project.**
-
----
-
-## ✨ Features
-
-- Responsive website
-- Custom furniture showcase
-- Selected works section
-- Workshop information
-- Manufacturing process overview
-- Information for designers and B2B requirements
-- Frequently Asked Questions
-- Contact information
-- Direct customer enquiry through WhatsApp
-- Mobile-friendly design
-
----
-
-## 🛠️ Tech Stack
-
-- **Next.js**
-- **React**
+- **Next.js 16**
+- **React 19**
 - **JavaScript**
-- **HTML**
 - **CSS**
 - **Git & GitHub**
+- **Netlify** for static hosting
 
----
-
-## 🏗️ Project Structure
-
-The project follows a Next.js-based structure:
+## Architecture
 
 ```
 sharma-woodworks/
 ├── components/
+│   ├── Layout.js
+│   ├── SEO.js
+│   ├── SectionHeading.js
+│   ├── PortfolioCard.js
+│   └── Lightbox.js
+├── lib/
+│   └── portfolio.js
 ├── pages/
+│   ├── index.js
+│   ├── designers.js
+│   └── _app.js
 ├── public/
+│   ├── portfolio images
+│   ├── robots.txt
+│   └── sitemap.xml
 ├── styles/
-├── package.json
+│   └── globals.css
+├── portfolio.json
 ├── next.config.mjs
-├── eslint.config.mjs
-├── jsconfig.json
-└── README.md
+└── netlify.toml
+```
+
+## Zero-cost hosting approach
+
+The website does not require a database, server API, authentication system, CMS, or paid third-party backend.
+
+Next.js is configured for static export:
+
+```text
+npm run build
+      ↓
+    out/
+      ↓
+    Netlify
+```
+
+This keeps the business website simple to deploy and maintain while enquiries continue through normal phone and WhatsApp communication.
+
+## Business enquiry flow
 
 ```
----
+Visitor
+  ↓
+Website
+  ↓
+Portfolio / Services
+  ↓
+WhatsApp or Call
+  ↓
+Requirements + Reference Images
+  ↓
+Quote / Discussion
+```
 
-## 🔨 The Workshop Process
+## Project status
 
-The website communicates the workshop's approach to custom furniture manufacturing, from understanding requirements to completing and delivering the finished furniture.
+**Status: Live & actively improving**
 
-The process involves:
+The website is being developed alongside the real-world business requirements. The focus is on performance, mobile UX, accessibility, local SEO, clear communication, and a simple enquiry journey.
 
-1. **Understanding Requirements**
-   - Discussing the customer's needs
-   - Understanding dimensions, design preferences, and intended use
-
-2. **Material & Design Planning**
-   - Selecting appropriate materials
-   - Planning the construction and finishing requirements
-
-3. **Manufacturing**
-   - Cutting and shaping materials
-   - Precision joinery and assembly
-   - Craftsmanship and finishing
-
-4. **Completion & Delivery**
-   - Final inspection and finishing
-   - Delivery of the completed furniture
-
----
-
-## 💡 What I Learned
-
-This project helped me understand that software development is not only about writing code.
-
-While working on a real business website, I learned about:
-
-- Translating real-world requirements into a software project
-- Designing for actual users
-- Structuring a business website
-- Responsive web development
-- Working with Next.js and React
-- Organizing project files and components
-- Presenting real business information clearly
-- Iterating on a project based on practical requirements
-
-Most importantly, it gave me experience building something intended to be used by a real business.
-
----
-
-## 🤖 Development & AI Assistance
-
-The initial version of this project was developed with assistance from AI tools as part of my learning process.
-
-As a Computer Science student, I used AI to help me understand the process of taking an idea from concept to a working application.
-
-I am progressively reviewing, modifying, debugging, and improving the project as I develop a deeper understanding of the technologies and codebase.
-
-My goal is not simply to have a working website, but to gradually take full ownership of the implementation and understand how the different parts of the application work.
-
----
-
-## 🚀 Future Improvements
-
-This project can be expanded from a business website into a more complete digital system for the workshop.
-
-Possible future improvements include:
-
-- [ ] Dedicated furniture/project gallery
-- [ ] Better project categorization
-- [ ] Customer enquiry management
-- [ ] WhatsApp enquiry automation
-- [ ] Admin dashboard
-- [ ] Content management system
-- [ ] Customer quotation workflow
-- [ ] SEO improvements
-- [ ] Website analytics
-- [ ] Performance optimization
-- [ ] Accessibility improvements
-- [ ] Improved mobile UX
-
----
-
-## 📈 Project Status
-
-**Status: Live & Actively Improving**
-
-The website is currently being used as the online presence for the family business.
-
-Future improvements will focus on both the technical quality of the application and its usefulness to the actual business.
-
----
-
-## 👨‍💻 About the Developer
+## About the Developer
 
 Built by **Deepu Sharma**, a Computer Science Engineering student at DYPIU, Pune.
 
-Currently learning:
+This project is part of my learning-by-building journey and is one of my projects for a real family business rather than a tutorial-only application.
 
-- C++
-- Data Structures & Algorithms
-- Python
-- Artificial Intelligence & Machine Learning
-- SQL & Databases
-- Software Development
+## Note
 
-This project is part of my journey of learning by building real-world software.
-
----
-
-## 📄 Note
-
-This repository contains code associated with a real-world business.
-
-Please do not reuse the business's branding, images, content, or other proprietary materials without permission.
-
----
-
-⭐ If you found this project interesting, feel free to explore the repository and the live website.
+The repository contains business branding, images, content, and other material associated with Sharma Woodworks. Please do not reuse proprietary business assets without permission.
