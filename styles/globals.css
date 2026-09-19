@@ -2,7 +2,7 @@
   --dark-walnut: #231610;
   --walnut-soft: #39271e;
   --brass-gold: #c5a059;
-  --brass-dark: #a98645;
+  --brass-dark: #8b6f37;
   --paper-bg: #faf8f5;
   --surface: #ffffff;
   --text-dark: #1f1916;
@@ -118,13 +118,14 @@ h3 { font-size: 1.65rem; line-height: 1.1; }
 .hero-copy { max-width: 700px; margin: 0 auto 34px; color: #eee8e2; font-size: clamp(1rem, 1.8vw, 1.2rem); }
 .eyebrow, .section-eyebrow, .contact-label {
   margin: 0;
-  color: var(--brass-gold);
+  color: var(--brass-dark);
   font-size: .76rem;
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
 }
 .hero-eyebrow { color: #e1c98e; }
+.designer-callout .section-eyebrow { color: var(--brass-gold); }
 .hero-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
 .btn {
   display: inline-flex;
@@ -187,7 +188,7 @@ section { padding: clamp(72px, 9vw, 120px) 5%; scroll-margin-top: 90px; }
   transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
 }
 .service-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); border-color: rgba(197,160,89,.45); }
-.service-number { display: block; margin-bottom: 34px; color: var(--brass-gold); font-family: 'Cormorant Garamond', serif; font-size: 2rem; }
+.service-number { display: block; margin-bottom: 34px; color: var(--brass-dark); font-family: 'Cormorant Garamond', serif; font-size: 2rem; }
 .service-card h3 { margin-bottom: 12px; }
 .service-card::after { content: '↗'; position: absolute; right: 22px; bottom: 20px; color: var(--brass-gold); font-size: 1rem; opacity: .65; transition: transform .2s ease, opacity .2s ease; }
 .service-card:hover::after { transform: translate(3px, -3px); opacity: 1; }
@@ -260,7 +261,7 @@ section { padding: clamp(72px, 9vw, 120px) 5%; scroll-margin-top: 90px; }
 .process-grid::before { content: ''; position: absolute; left: 7%; right: 7%; top: 38px; height: 1px; background: rgba(197,160,89,.4); }
 .process-card { position: relative; z-index: 1; padding: 10px 20px 20px; }
 .process-card > span { display: inline-flex; align-items: center; justify-content: center; min-width: 74px; padding: 0 10px; background: var(--paper-bg); position: relative; }
-.process-card > span, .brief-grid span { display: block; margin-bottom: 16px; color: var(--brass-gold); font-family: 'Cormorant Garamond', serif; font-size: 4rem; font-weight: 700; line-height: 1; }
+.process-card > span, .brief-grid span { display: block; margin-bottom: 16px; color: var(--brass-dark); font-family: 'Cormorant Garamond', serif; font-size: 4rem; font-weight: 700; line-height: 1; }
 .process-card h3 { margin-bottom: 12px; }
 .designer-callout { background: var(--dark-walnut); color: white; }
 .designer-callout-inner { max-width: var(--max-width); margin: auto; display: flex; align-items: end; justify-content: space-between; gap: 50px; }
@@ -291,7 +292,7 @@ section { padding: clamp(72px, 9vw, 120px) 5%; scroll-margin-top: 90px; }
 
 .testimonial-grid { grid-template-columns: repeat(2, 1fr); }
 .testimonial-card { padding: 36px; background: var(--paper-bg); border-left: 3px solid var(--brass-gold); }
-.quote-mark { color: var(--brass-gold); font-family: Georgia, serif; font-size: 4rem; line-height: .7; }
+.quote-mark { color: var(--brass-dark); font-family: Georgia, serif; font-size: 4rem; line-height: .7; }
 .testimonial-card p { margin: 18px 0 28px; font-size: 1rem; line-height: 1.7; }
 .testimonial-card strong { display: block; color: var(--dark-walnut); }
 .testimonial-card span { color: var(--text-light); font-size: .88rem; }
