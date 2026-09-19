@@ -1,119 +1,111 @@
-// components/Layout.js
-import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
+
+const quoteMessage = 'Hello Sharma Woodworks, I found your website and would like to discuss a custom furniture project.';
 
 export default function Layout({ children }) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [year, setYear] = useState('');
 
   useEffect(() => {
-    setYear(new Date().getFullYear());
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 40);
-    };
-    window.addEventListener('scroll', handleScroll);
+    const handleScroll = () => setScrolled(window.scrollY > 40);
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (!menuOpen) return undefined;
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') setMenuOpen(false);
+    };
+    document.body.style.overflow = 'hidden';
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.body.style.overflow = '';
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [menuOpen]);
+
+  const closeMenu = () => setMenuOpen(false);
+
   return (
-    <>
-      <style jsx global>{`
-        html, body {
-          max-width: 100vw;
-          overflow-x: hidden;
-          margin: 0;
-          padding: 0;
-        }
-        .site-wrapper {
-          width: 100%;
-          overflow-x: hidden;
-          position: relative;
-        }
-        
-        /* NEW: Hide mobile menu items on desktop */
-        @media (min-width: 769px) {
-          .mobile-only {
-            display: none !important;
-          }
-        }
-      `}</style>
+    <div className="site-wrapper">
+      <header className="site-header">
+        <nav className={scrolled ? 'site-nav scrolled' : 'site-nav'} aria-label="Primary navigation">
+          <Link href="/" className="logo" aria-label="Sharma Woodworks home" onClick={closeMenu}>
+            <Image src="/logo.webp" alt="Sharma Woodworks" width={180} height={70} priority style={{ objectFit: 'contain', objectPosition: 'left center' }} />
+          </Link>
 
-      <div className="site-wrapper">
-        <nav id="navbar" className={scrolled ? 'scrolled' : ''}>
-          <div className="nav-brand-group">
-            <Link href="/" className="logo" aria-label="Sharma Woodworks Home">
-              <Image src="/logo.png" alt="Sharma Woodworks Logo" width={45} height={45} style={{ objectFit: 'contain' }} />
-            </Link>
-          </div>
-          
-          <div className={`nav-links ${menuOpen ? 'active' : ''}`} id="navLinks">
-            <Link href="/#portfolio" onClick={() => setMenuOpen(false)}>Selected Works</Link>
-            
-            {/* Added mobile-only class here */}
-            <Link href="/designers" className="mobile-only" onClick={() => setMenuOpen(false)}>For Designers</Link>
-            
-            <Link href="/#process" onClick={() => setMenuOpen(false)}>Our Process</Link>
-            <Link href="/#faq" onClick={() => setMenuOpen(false)}>FAQ</Link>
-            <Link href="/#contact" onClick={() => setMenuOpen(false)}>Contact</Link>
-
-            {/* Added mobile-only class here */}
-            <a href="tel:+919137794182" className="mobile-only mobile-call-only" onClick={() => setMenuOpen(false)}>📞 Call Now</a>
+          <div id="primary-navigation-links" className={`nav-links ${menuOpen ? 'active' : ''}`}>
+            <Link href="/#portfolio" onClick={closeMenu}>Work</Link>
+            <Link href="/#process" onClick={closeMenu}>Process</Link>
+            <Link href="/designers" onClick={closeMenu}>For Designers</Link>
+            <Link href="/#reviews" onClick={closeMenu}>Reviews</Link>
+            <Link href="/#contact" onClick={closeMenu}>Contact</Link>
+            <a className="mobile-menu-cta" href={`https://wa.me/919137794182?text=${encodeURIComponent(quoteMessage)}`} target="_blank" rel="noopener noreferrer" onClick={closeMenu}>Get a Quote ↗</a>
           </div>
 
           <div className="nav-actions">
-            <Link href="/designers" className="b2b-link">For Designers</Link>
-            <a href="tel:+919137794182" className="call-nav-btn">📞 Call Now</a>
-            <button 
-              className={`menu-toggle ${menuOpen ? 'active' : ''}`} 
-              onClick={() => setMenuOpen(!menuOpen)}
-              aria-label="Open Navigation Menu"
+            <a href={`https://wa.me/919137794182?text=${encodeURIComponent(quoteMessage)}`} className="nav-quote" target="_blank" rel="noopener noreferrer">
+              Get a Quote
+            </a>
+            <button
+              type="button"
+              className={`menu-toggle ${menuOpen ? 'active' : ''}`}
+              onClick={() => setMenuOpen((open) => !open)}
+              aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+              aria-expanded={menuOpen}
+              aria-controls="primary-navigation-links"
             >
-              <span></span><span></span><span></span>
+              <span /><span /><span />
             </button>
           </div>
         </nav>
+      </header>
 
-        <main>{children}</main>
+      <main>{children}</main>
 
-        <footer>
-          <div className="footer-container">
-            <div className="footer-col">
-              <h4>Sharma Woodworks</h4>
-              <p>Custom wooden furniture manufacturing and bespoke joinery workshop in Jogeshwari West, Mumbai. We build custom designs for homeowners, architects, and retail showrooms.</p>
-              <div className="social-links">
-                <a href="https://instagram.com/sharmawoodworks.mumbai?utm_source=website" target="_blank" rel="noopener noreferrer">Instagram</a>
-                <a href="https://facebook.com/sharmawoodworks?utm_source=website" target="_blank" rel="noopener noreferrer">Facebook</a>
-                <a href="https://www.linkedin.com/company/sharma-woodworks?utm_source=website" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-
-              </div>
-            </div>
-            <div className="footer-col">
-              <h4>Quick Links</h4>
-              <ul>
-                <li><Link href="/#portfolio">Selected Works</Link></li>
-                <li><Link href="/#process">Manufacturing Process</Link></li>
-                <li><Link href="/#faq">FAQ</Link></li>
-                <li><Link href="/designers">For Designers (B2B)</Link></li>
-              </ul>
-            </div>
-            <div className="footer-col">
-              <h4>Workshop Hours</h4>
-              <p>Monday – Saturday: 9:00 AM – 8:00 PM<br/>Sunday: By Appointment</p>
-              <br/>
-              <p>Jogeshwari West, Mumbai</p>
+      <footer>
+        <div className="footer-container">
+          <div className="footer-brand">
+            <h2>Sharma Woodworks</h2>
+            <p>Custom wooden furniture manufacturing and bespoke joinery from our workshop in Oshiwara, Mumbai.</p>
+            <div className="social-links">
+              <a href="https://instagram.com/sharmawoodworks.mumbai?utm_source=website" target="_blank" rel="noopener noreferrer">Instagram</a>
+              <a href="https://facebook.com/sharmawoodworks?utm_source=website" target="_blank" rel="noopener noreferrer">Facebook</a>
+              <a href="https://www.linkedin.com/company/sharma-woodworks?utm_source=website" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             </div>
           </div>
-          <div className="footer-bottom">
-            <p>&copy; {year} Sharma Woodworks. Est. 2011. All rights reserved.</p>
-          </div>
-        </footer>
 
-        <a href="https://wa.me/919137794182?text=Hello%20Sharma%20Woodworks,%20I%20have%20an%20inquiry%20from%20your%20website." className="whatsapp-float" target="_blank" rel="noopener noreferrer">
-          💬 Chat on WhatsApp
-        </a>
+          <div className="footer-col">
+            <h3>Explore</h3>
+            <Link href="/#portfolio">Selected Work</Link>
+            <Link href="/#process">Our Process</Link>
+            <Link href="/designers">Designers &amp; B2B</Link>
+            <Link href="/#faq">FAQ</Link>
+          </div>
+
+          <div className="footer-col">
+            <h3>Contact</h3>
+            <a href="tel:+919137794182">+91 91377 94182</a>
+            <a href="https://wa.me/919137794182" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            <a href="https://maps.google.com/?cid=16700088029094036214" target="_blank" rel="noopener noreferrer">Get directions ↗</a>
+            <p>Monday – Saturday<br />9:00 AM – 8:00 PM</p>
+          </div>
+        </div>
+
+        <div className="footer-bottom">
+          <p>© {new Date().getFullYear()} Sharma Woodworks · Est. 2011</p>
+          <p>Oshiwara, Jogeshwari West, Mumbai</p>
+        </div>
+      </footer>
+
+      <div className="mobile-contact-bar" aria-label="Quick contact actions">
+        <a href="https://wa.me/919137794182" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        <a href="tel:+919137794182">Call</a>
       </div>
-    </>
+    </div>
   );
 }

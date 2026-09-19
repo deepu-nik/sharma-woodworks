@@ -25,7 +25,7 @@ export default function Lightbox({ work, onClose }) {
       className="lightbox-modal"
       role="dialog"
       aria-modal="true"
-      aria-label={work.title}
+      aria-labelledby="lightbox-title"
       onMouseDown={(event) => {
         if (event.target === event.currentTarget) onClose();
       }}
@@ -37,7 +37,7 @@ export default function Lightbox({ work, onClose }) {
       <div className="lightbox-inner">
         <img className="lightbox-content" src={work.image} alt={work.alt || work.title} />
         <div className="lightbox-caption">
-          <strong>{work.title}</strong>
+          <strong id="lightbox-title">{work.title}</strong>
           <span>{work.description}</span>
         </div>
       </div>
