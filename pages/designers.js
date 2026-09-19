@@ -1,10 +1,12 @@
+import dynamic from 'next/dynamic';
 import { useState } from 'react';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import SectionHeading from '../components/SectionHeading';
 import PortfolioCard from '../components/PortfolioCard';
-import Lightbox from '../components/Lightbox';
 import { getPortfolio } from '../lib/portfolio';
+
+const Lightbox = dynamic(() => import('../components/Lightbox'), { ssr: false });
 
 export default function Designers({ works }) {
   const [lightboxWork, setLightboxWork] = useState(null);
