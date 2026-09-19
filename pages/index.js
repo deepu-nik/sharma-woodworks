@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react';
+import Image from 'next/image';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import SectionHeading from '../components/SectionHeading';
@@ -82,6 +83,16 @@ export default function Home({ works }) {
       />
 
       <header className="hero">
+        <div className="hero-media" aria-hidden="true">
+          <Image
+            src="/MediaConsole.jpg"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            style={{ objectFit: 'cover', objectPosition: 'center' }}
+          />
+        </div>
         <div className="hero-inner">
           <p className="eyebrow hero-eyebrow">SHARMA WOODWORKS · EST. 2011 · MUMBAI</p>
           <h1>Furniture made around your space.</h1>
