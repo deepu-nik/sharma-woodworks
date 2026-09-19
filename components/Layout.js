@@ -38,7 +38,7 @@ export default function Layout({ children }) {
             <Image src="/logo.png" alt="Sharma Woodworks" width={180} height={70} priority style={{ objectFit: 'contain', objectPosition: 'left center' }} />
           </Link>
 
-          <div className={`nav-links ${menuOpen ? 'active' : ''}`}>
+          <div id="primary-navigation-links" className={`nav-links ${menuOpen ? 'active' : ''}`}>
             <Link href="/#portfolio" onClick={closeMenu}>Work</Link>
             <Link href="/#process" onClick={closeMenu}>Process</Link>
             <Link href="/designers" onClick={closeMenu}>For Designers</Link>
@@ -63,7 +63,6 @@ export default function Layout({ children }) {
             </button>
           </div>
         </nav>
-        <div id="primary-navigation-links" className="sr-only" aria-hidden="true">Primary navigation</div>
       </header>
 
       <main>{children}</main>
