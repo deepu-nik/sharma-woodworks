@@ -178,7 +178,7 @@ section { padding: clamp(72px, 9vw, 120px) 5%; scroll-margin-top: 90px; }
 .service-grid { grid-template-columns: repeat(4, 1fr); }
 .service-card {
   padding: 30px;
-  min-height: 230px;
+  min-height: 205px;
   background: var(--surface);
   border: 1px solid var(--line);
   transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
@@ -438,7 +438,53 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--brass-gold); ou
   .mobile-contact-bar a:first-child { background: #188b45; border-radius: 3px; }
   .final-cta { padding-bottom: 150px; }
 }
+
 @media (max-width: 500px) {
+  body { font-size: 1rem; }
+
+  section { padding: 64px 20px; }
+
+  .section-heading { margin-bottom: 40px; }
+  .section-lead { font-size: 1.05rem; line-height: 1.65; }
+
+  .hero-copy { font-size: 1.08rem; line-height: 1.65; }
+  .hero-proof { font-size: .9rem; }
+  .hero-proof span { padding: 0 12px; }
+
+  .trust-grid strong { font-size: 1.55rem; }
+  .trust-grid span { font-size: .78rem; }
+
+  .service-card {
+    min-height: 0;
+    padding: 26px;
+  }
+  .service-number { margin-bottom: 24px; }
+  .service-card p,
+  .process-card p,
+  .portfolio-card p,
+  .brief-grid p { font-size: 1rem; line-height: 1.65; }
+
+  .process-grid { gap: 18px; }
+  .process-card { padding: 4px 0 30px; }
+  .process-card > span { font-size: 3.5rem; margin-bottom: 12px; }
+
+  .portfolio-card-content { padding: 22px; }
+  .portfolio-card-topline { font-size: .72rem; }
+  .portfolio-card h3 { font-size: 1.75rem; }
+
+  .faq-question { font-size: 1.06rem; line-height: 1.45; }
+
+  .contact-card address { font-size: 1.02rem; line-height: 1.7; }
+  .hours { font-size: .95rem; line-height: 1.7; }
+
+  .footer-col a,
+  .footer-col p,
+  .footer-bottom { font-size: .9rem; }
+
+  .btn { font-size: .88rem; min-height: 52px; }
+
+  .final-cta h2 { line-height: 1.08; }
+}
   section { padding: 70px 20px; }
   .hero { padding-left: 20px; padding-right: 20px; }
   .hero-actions .btn { width: 100%; }
