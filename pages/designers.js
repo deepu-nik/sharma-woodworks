@@ -1,112 +1,131 @@
-// pages/designers.js
-import Head from 'next/head';
-import Image from 'next/image';
 import { useState } from 'react';
 import Layout from '../components/Layout';
-import fs from 'fs';
-import path from 'path';
+import SEO from '../components/SEO';
+import SectionHeading from '../components/SectionHeading';
+import PortfolioCard from '../components/PortfolioCard';
+import Lightbox from '../components/Lightbox';
+import { getPortfolio } from '../lib/portfolio';
 
 export default function Designers({ works }) {
-  const [lightboxImage, setLightboxImage] = useState(null);
+  const [lightboxWork, setLightboxWork] = useState(null);
+  const designerWorks = works.filter((work) => work.b2b_highlight);
 
-  // Safely fallback to an empty array if works is undefined, then filter
-  const designerWorks = (works || []).filter((work) => work.b2b_highlight);
+  const schemaData = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Designer & B2B Manufacturing | Sharma Woodworks',
+    description: 'Custom furniture fabrication for interior designers, architects and businesses in Mumbai.',
+    url: 'https://sharmawoodworks.com/designers',
+  };
 
   return (
     <Layout>
-      <Head>
-        <title>B2B Designer Portal | Sharma Woodworks Mumbai</title>
-        <meta name="description" content="Exclusive trade portal for interior designers and architects in Mumbai. Off-site bespoke carpentry with strict, reliable production scheduling." />
-        
-        <link rel="icon" type="image/png" sizes="32x32" href="/logo.png" />
-        <link rel="apple-touch-icon" href="/logo.png" />
+      <SEO
+        title="Designer & B2B Manufacturing | Sharma Woodworks Mumbai"
+        description="Custom furniture fabrication for interior designers, architects, showrooms and businesses in Mumbai. Share drawings, dimensions and finish requirements with Sharma Woodworks."
+        canonicalPath="/designers"
+        ogImage="/MediaConsole.jpg"
+        jsonLd={schemaData}
+      />
 
-        <link rel="canonical" href="https://sharmawoodworks.com/designers" />
-      </Head>
-
-      <header className="hero" style={{ minHeight: '500px', height: '60vh' }}>
-        <h1>Trade & Designer Fabrication Portal</h1>
-        <p>Your reliable manufacturing partner in Oshiwara, Mumbai. We execute precisely from your technical drawings with strict timeline adherence and a zero-mess guarantee.</p>
-        <div className="hero-btn-group">
-          <a href="https://wa.me/919137794182?text=Hello%20Sharma%20Woodworks,%20I%20am%20an%20interior%20designer%20looking%20to%20discuss%20a%20trade%20project." className="btn-primary" target="_blank" rel="noopener noreferrer">Submit CAD / Drawings</a>
-          <a href="tel:+919137794182" className="btn-secondary">Call Trade Desk</a>
+      <header className="hero hero-compact">
+        <div className="hero-inner">
+          <p className="eyebrow hero-eyebrow">FOR DESIGNERS · ARCHITECTS · BUSINESSES</p>
+          <h1>A fabrication partner for your next project.</h1>
+          <p className="hero-copy">
+            Custom furniture and off-site fabrication from your drawings, dimensions and finish requirements.
+          </p>
+          <div className="hero-actions">
+            <a
+              href="https://wa.me/919137794182?text=Hello%20Sharma%20Woodworks,%20I%20am%20an%20interior%20designer/architect%20and%20would%20like%20to%20discuss%20a%20trade%20project.%0A%0AProject:%0AQuantity:%0ADrawings/specifications:%0ATimeline:%0ADelivery%20location:"
+              className="btn btn-primary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Send Drawings on WhatsApp <span aria-hidden="true">↗</span>
+            </a>
+            <a href="tel:+919137794182" className="btn btn-outline">Call Trade Desk</a>
+          </div>
         </div>
       </header>
 
-      <section className="process-bg">
-        <h2>Why Mumbai Designers Partner With Us</h2>
-        <div className="process-steps">
-          <div className="step">
-            <div className="step-num">01</div>
-            <h3>Reliable Timelines</h3>
-            <p>Predictable scheduling so your site timelines never stall waiting for custom millwork.</p>
-          </div>
-          <div className="step">
-            <div className="step-num">02</div>
-            <h3>Off-Site Fabrication</h3>
-            <p>Zero on-site dust, noise, or labor headaches. Delivered finished and ready to install.</p>
-          </div>
-          <div className="step">
-            <div className="step-num">03</div>
-            <h3>Exact Specification Match</h3>
-            <p>Strict adherence to your dimension layouts, material callouts, and finish requirements.</p>
-          </div>
+      <section>
+        <SectionHeading
+          eyebrow="WHY WORK WITH US"
+          title="Built around your specifications."
+          description="A straightforward workshop-to-site workflow for custom fabrication requirements."
+        />
+        <div className="process-grid">
+          <article className="process-card">
+            <span>01</span>
+            <h3>Specification-led</h3>
+            <p>Work from your drawings, dimensions, material callouts and finish requirements.</p>
+          </article>
+          <article className="process-card">
+            <span>02</span>
+            <h3>Off-site fabrication</h3>
+            <p>Furniture is fabricated and finished at the workshop before dispatch to the project site.</p>
+          </article>
+          <article className="process-card">
+            <span>03</span>
+            <h3>Direct communication</h3>
+            <p>Discuss feasibility, materials, quantities and production requirements directly with the workshop.</p>
+          </article>
         </div>
       </section>
 
-      <section id="portfolio">
-        <h2>Curated Trade Portfolio</h2>
-        <div className="grid">
+      <section className="section-surface">
+        <SectionHeading
+          eyebrow="TRADE PORTFOLIO"
+          title="Selected fabrication work."
+          description="A few pieces highlighted for designer and business enquiries."
+        />
+        <div className="portfolio-grid">
           {designerWorks.map((work) => (
-            <div className="card" key={work.id} onClick={() => setLightboxImage(work.image)}>
-              <div className="card-img-wrapper">
-                <Image 
-                  src={work.image} 
-                  alt={work.title} 
-                  fill 
-                  style={{ objectFit: 'cover' }} 
-                  sizes="(max-width: 768px) 100vw, 33vw" 
-                />
-              </div>
-              <div className="card-content">
-                <h3>{work.title}</h3>
-                <p>{work.description}</p>
-              </div>
-            </div>
+            <PortfolioCard key={work.id} work={work} onOpen={setLightboxWork} />
           ))}
+        </div>
+        {!designerWorks.length && (
+          <p className="empty-state">More trade projects are being photographed. Contact us for the extended catalog.</p>
+        )}
+      </section>
 
-          {designerWorks.length === 0 && (
-            <p className="no-results" style={{ gridColumn: "1 / -1", textAlign: "center", padding: "2rem", color: "#666" }}>
-              More B2B showcase pieces being photographed. Contact us directly for our extended catalog.
-            </p>
-          )}
+      <section className="designer-process">
+        <SectionHeading
+          eyebrow="TRADE ENQUIRY"
+          title="What to send us."
+          description="The more detail you share, the faster the team can understand the requirement."
+        />
+        <div className="brief-grid">
+          <div><span>01</span><strong>Drawings or reference images</strong><p>CAD, PDF, sketch or reference photograph.</p></div>
+          <div><span>02</span><strong>Dimensions & quantity</strong><p>Approximate dimensions and number of pieces.</p></div>
+          <div><span>03</span><strong>Material & finish</strong><p>Preferred wood, veneer, rattan, hardware or finish.</p></div>
+          <div><span>04</span><strong>Timeline & location</strong><p>Required date and project delivery location.</p></div>
         </div>
       </section>
 
-      {lightboxImage && (
-        <div className="lightbox-modal active" onClick={() => setLightboxImage(null)}>
-          <span className="lightbox-close">&times;</span>
-          <img className="lightbox-content" src={lightboxImage} alt="Enlarged Trade View" />
-        </div>
-      )}
+      <section className="final-cta">
+        <p className="section-eyebrow">READY TO DISCUSS A PROJECT?</p>
+        <h2>Send the drawings. Let&apos;s talk through the build.</h2>
+        <a
+          href="https://wa.me/919137794182?text=Hello%20Sharma%20Woodworks,%20I%20am%20an%20interior%20designer/architect%20and%20would%20like%20to%20discuss%20a%20trade%20project."
+          className="btn btn-primary"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Start Trade Enquiry <span aria-hidden="true">↗</span>
+        </a>
+      </section>
+
+      <Lightbox work={lightboxWork} onClose={() => setLightboxWork(null)} />
     </Layout>
   );
 }
 
-export async function getStaticProps() {
-  let works = [];
-  try {
-    const filePath = path.join(process.cwd(), 'portfolio.json');
-    const jsonData = fs.readFileSync(filePath, 'utf8');
-    const data = JSON.parse(jsonData);
-    works = data.works || [];
-  } catch (error) {
-    console.error("Error reading portfolio.json in designers.js:", error);
-  }
-
+export function getStaticProps() {
   return {
     props: {
-      works,
+      works: getPortfolio(),
     },
   };
 }
