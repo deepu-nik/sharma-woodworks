@@ -35,7 +35,7 @@ export default function Layout({ children }) {
       <header className="site-header">
         <nav className={scrolled ? 'site-nav scrolled' : 'site-nav'} aria-label="Primary navigation">
           <Link href="/" className="logo" aria-label="Sharma Woodworks home" onClick={closeMenu}>
-            <Image src="/logo.png" alt="Sharma Woodworks" width={180} height={70} priority style={{ objectFit: 'contain', objectPosition: 'left center' }} />
+            <Image src="/logo.webp" alt="Sharma Woodworks" width={180} height={70} priority style={{ objectFit: 'contain', objectPosition: 'left center' }} />
           </Link>
 
           <div id="primary-navigation-links" className={`nav-links ${menuOpen ? 'active' : ''}`}>
