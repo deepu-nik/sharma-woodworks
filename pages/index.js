@@ -36,6 +36,13 @@ export default function Home({ works }) {
     "logo": "https://sharmawoodworks.com/logo.png",
     "telephone": "+919137794182",
     "url": "https://sharmawoodworks.com",
+
+    "sameAs": [
+      "https://www.linkedin.com/company/sharma-woodworks/",
+      "https://instagram.com/sharmawoodworks.mumbai/",
+      "https://facebook.com/sharmawoodworks/"
+    ],
+
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Bohri Compound, Oshiwara Bridge, near Sunni Mastaniya Masjid, Oshiwara, Jogeshwari West",

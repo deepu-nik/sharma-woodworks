@@ -85,6 +85,8 @@ export default function Layout({ children }) {
               <div className="social-links">
                 <a href="https://instagram.com/sharmawoodworks.mumbai?utm_source=website" target="_blank" rel="noopener noreferrer">Instagram</a>
                 <a href="https://facebook.com/sharmawoodworks?utm_source=website" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a href="https://www.linkedin.com/company/sharma-woodworks?utm_source=website" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+
               </div>
             </div>
             <div className="footer-col">
