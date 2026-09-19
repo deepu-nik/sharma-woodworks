@@ -303,7 +303,7 @@ export default function Home({ works }) {
               referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen
             />
-            <a href="https://maps.google.com/?cid=16700088029094036214" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.google.com/maps/dir/?api=1&destination=Sharma%20Woodworks%2C%20Oshiwara%2C%20Mumbai%2C%20Maharashtra%20400102&travelmode=driving" target="_blank" rel="noopener noreferrer">
               Get directions ↗
             </a>
           </div>
